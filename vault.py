@@ -10,9 +10,9 @@ while True:
     if mode == "q":
         break
     if mode == "view":
-        pass
+        view()
     elif mode == "add":
-        pass
+        add()
     else:
         print("Invalid Mode!")
         continue

@@ -27,3 +27,10 @@ def get_passwords():
             passwords[website] = password
             return passwords
         
+passwords = get_passwords()
+
+for website, password in passwords.items():
+    print(f"Website: {website}, Password: {password}")
+
+
+        

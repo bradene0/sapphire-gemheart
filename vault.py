@@ -9,3 +9,5 @@ fernet = Fernet(key)
 username = input("Enter your username: ")
 password = getpass.getpass("Enter your password: ")
 website = input("Enter your website: ")
+
+encrypted_password = fernet.encrypt(password.encode())

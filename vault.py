@@ -5,3 +5,7 @@ from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 fernet = Fernet(key)
 
+#Prompt the user to enter their username, password, and website
+username = input("Enter your username: ")
+password = getpass.getpass("Enter your password: ")
+website = input("Enter your website: ")

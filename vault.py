@@ -17,6 +17,7 @@ encrypted_password = fernet.encrypt(password.encode())
 with open('passwords.txt', 'a') as file:
     file.write(f"{username},{website},{encrypted_password.decode()}\n")
 
+#Function to manually retrieve passwords and user and website
 def get_passwords():
     passwords = {}
     with open('passwords.txt', 'r') as file:
@@ -26,9 +27,11 @@ def get_passwords():
             password = fernet.decrypt(encrypted_password.encode()).decode()
             passwords[website] = password
             return passwords
-        
+
+#Reads the passwords from file
 passwords = get_passwords()
 
+#Prints the passwords
 for website, password in passwords.items():
     print(f"Website: {website}, Password: {password}")
 

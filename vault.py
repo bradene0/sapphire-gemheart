@@ -12,8 +12,12 @@ website = input("Enter your website: ")
 
 #Encrypts the password
 encrypted_password = fernet.encrypt(password.encode())
+
+#Stores the encrypted password along with username and website
 with open('passwords.txt', 'a') as file:
     file.write(f"{username},{website},{encrypted_password.decode()}\n")
+
+#Reads the passwords from file
 with open('passwords.txt', 'r') as file:
     lines = file.readlines()
 

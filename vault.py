@@ -17,12 +17,3 @@ encrypted_password = fernet.encrypt(password.encode())
 with open('passwords.txt', 'a') as file:
     file.write(f"{username},{website},{encrypted_password.decode()}\n")
 
-#Reads the passwords from file
-with open('passwords.txt', 'r') as file:
-    lines = file.readlines()
-
-#Decrypts and prints passwords
-for line in lines:
-    username, website, encrypted_password = line.strip().split(',')
-    password = fernet.decrypt(encrypted_password.encode()).decode()
-    print(f"Username: {username}, Website: {website}, Password: {password}")

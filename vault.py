@@ -21,6 +21,7 @@ with open('passwords.txt', 'a') as file:
 with open('passwords.txt', 'r') as file:
     lines = file.readlines()
 
+#Decrypts and prints passwords
 for line in lines:
     username, website, encrypted_password = line.strip().split(',')
     password = fernet.decrypu(encrypted_password.encode()).decode()
